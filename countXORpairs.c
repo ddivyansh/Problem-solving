@@ -1,4 +1,7 @@
 //count zeroes xor pair which result in zero
+#include<iostream>
+using namespace std;
+#include<map>
 {
     int t;
     cin>>t;//test case
