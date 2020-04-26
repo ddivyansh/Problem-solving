@@ -1,4 +1,7 @@
-//1st problem
+/*
+let's paint 
+find minimum number of boxes for bob to win the competition.
+*/
 long long findMinimum (vector<long long> arr) 
 {
    long long sum=0;
