@@ -1,4 +1,4 @@
-//
+//1st problem
 long long findMinimum (vector<long long> arr) 
 {
    long long sum=0;
@@ -21,6 +21,5 @@ long long findMinimum (vector<long long> arr)
       break;
    }
    //cout<<check_sum<<rem_sum<<endl;
-   return count;
-   
+   return count;  
 }
