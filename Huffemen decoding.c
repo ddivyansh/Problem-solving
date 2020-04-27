@@ -25,7 +25,7 @@ create_map(root->left,key+"0");//for left
 create_map(root->right,key+"1");//for right
 //now when our call gets cleared we'll remove that value of edge from key
 //for ex: when call of B gets cleared so key should contain '0' only not
-//'0 1' for this we'll do the below operation.
+//'0 1' for this we'll do the below operation so that when recursive call terminates it does this thing.
 key.pop_back();
 }
 
