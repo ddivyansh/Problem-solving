@@ -1,0 +1,69 @@
+// you'll provided with an input array and  you've covert it into a vector of vectors, in a vector each element should be paired with its freqeuncy in the input array.
+//Now the vector should be arranged in order of decreasing frequency and in case there is a clash of frequencies, the  order should be ascending.
+
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<vector<int>> groupsort(vector <int>arr)
+{
+map<int,int> frequency;
+int n= arr.size();
+for(int i=0;i<n;i++)
+{
+    frequency[arr[i]]++;
+}
+//to sort as per frequency, we can use multi map
+multimap<int, int> map2;
+map<int,int> ::iterator itr1;
+for(itr1=frequency.begin();itr1!=frequency.end();itr1++)
+{
+    map2.insert({itr1->second,itr1->first});
+    //map 2 is sorted as per values but in ascending order.
+}
+//creating a normal map and for same keys we've used a set to store the values as we want them to be unique and in ascending order.
+map <int, set<int>> finalmap;
+multimap<int,int> :: reverse_iterator itr2;
+for(itr2=map2.rbegin();itr2!=map2.rend();itr2++)
+{
+    finalmap[itr2->first].insert(itr2->second);
+    //final map is ready and is unordered
+}
+
+vector<vector<int>> res;
+map<int, set<int>> ::reverse_iterator itr3;
+for(itr3=finalmap.rbegin();itr3!=finalmap.rend();itr3++)
+{
+    set<int > ::iterator it;
+    for (it=finalmap[itr3->first].begin();it!=finalmap[itr3->first].end();it++)
+    {
+        res.push_back({*it,itr3->first});
+    }
+
+}
+return res;
+
+
+}
+int main()
+{
+//test cases input
+vector <int>arr{3,3,2,1};
+vector<vector<int>> res2=groupsort(arr);
+//printing the result vector
+cout<<"the answer is:"<<endl;
+for (int i=0;i<res2.size();i++)
+{
+    for(int j=0;j<res2[i].size();j++)
+    {
+        cout<<res2[i][j]<<" ";
+    }
+    cout<<endl;
+}
+
+
+}
+
+
+
+
