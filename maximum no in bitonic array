@@ -1,0 +1,23 @@
+//Given an array Arr of N elements which is first increasing and then may be decreasing, find the maximum element in the array.
+//Note: If the array is increasing then just print then last element will be the maximum value.
+
+
+
+
+int findMaximum(int arr[], int n) 
+	{
+	    // code here
+	    int i;
+	    long max=INT_MIN;
+	    for(i=0;i<n;i++)
+	    {
+	        if(arr[i]>=max)
+	        {
+	            max=arr[i];
+	        }
+	        else
+	        return max;
+	        
+	    }
+	    return max;
+	}
