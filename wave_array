@@ -1,0 +1,19 @@
+//N = 5
+//arr[] = {1,2,3,4,5}
+//Output: 2 1 4 3 5
+#include<bits/stdc++.h>
+using namespace std;
+void convertToWave(int *arr, int n)
+{
+    //arrays are always passed by reference i.e base address of array
+    // Your code here
+    int i;
+    for (i=0;i<n-1;)
+    {
+        //use swap function to swap adjacent elements and keep doing it till n-1.
+        swap(arr[i],arr[i+1]);
+        i=i+2;
+    }
+    
+}
+//input code
