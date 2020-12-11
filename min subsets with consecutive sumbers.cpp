@@ -30,6 +30,33 @@ int numofsubset(int arr[], int n)
     }
       num=num+1; //updating the value of num.
   }
-  return num;
+  return num;   
+}
+
+int main()
+{
+ int t;
+    vector<int> v1;
+    cin>>t;
+    while(t>0)
+    {
+        int i;
+        int r;
+        int n;
+        cin>>n;
+        int arr[n];
+        for(i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        r=numofsubset(arr,n);
+        v1.push_back(r);
+        t--;
+    }
+    for(auto i=v1.begin();i!=v1.end();i++)
+    {
+        cout<<*i<<endl;
+    }
     
+	return 0;
 }
