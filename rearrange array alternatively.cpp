@@ -21,6 +21,37 @@ class Solution{
     
     Approach 2 :
     using O(1) space
+    Creating an array of binded values, which allows us to access two values at the same time
+    if we want to access a & b, (a,b<=n)
+    so a=a+(b%n)*n, old value can be accessed using a%n and a/n
+    
+     void rearrange(long long *a, int n) 
+    { 
+    int maxi=n-1; //maximum index
+    int mini=0; //minimum index
+    int z=a[n-1]+1;
+    int i=0;
+    //prepare the array of binded values of maximum(at even indexs)
+    //& minimum(at odd indexes)
+    while(i<n)
+    {
+        if(i%2==0)//even index
+            {
+                a[i]=a[i]+(a[maxi]%z)*z;
+                maxi--;
+            }
+        else
+        {
+            a[i]=a[i]+(a[mini]%z)*z;
+            mini++;
+        }
+        i++;
+    }
+    for(int k=0;k<n;k++)
+    {
+     a[k]=a[k]/z;   
+    }
+    
     */
     
     void rearrange(long long *a, int n) 
